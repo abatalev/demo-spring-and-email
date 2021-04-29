@@ -14,10 +14,10 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class EmailServiceTest {
+class EmailServiceTest {
 
     @Test
-    public void checkCreateMessage() throws MessagingException, IOException {
+    void checkCreateMessage() throws MessagingException, IOException {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("localhost");
         mailSender.setPort(1111);
@@ -38,7 +38,7 @@ public class EmailServiceTest {
     }
 
     @Test
-    public void checkSendEmail() throws Exception {
+    void checkSendEmail() throws Exception {
         try (SimpleSmtpServer dumbster = SimpleSmtpServer.start(SimpleSmtpServer.AUTO_SMTP_PORT)) {
             JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
             mailSender.setHost("localhost");
